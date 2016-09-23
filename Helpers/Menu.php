@@ -8,11 +8,8 @@
  
 namespace App\Templates\Bootstrap\Helpers;
 
-use Shared\Helpers\Gravatar;
-
 use Auth;
 use Cache;
-use Realm;
 use Config;
 use Request;
 
@@ -48,7 +45,7 @@ class Menu
                 $result .= '
                     <li class="dropdown">
                         <a href="' .site_url('account') .'" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="' .Gravatar::getUrl($user->email) .'" class="img-rounded" style="height: 18px;" />
+                            <img src="' .$user->avatar .'" class="img-rounded" style="height: 18px;" />
                             <strong>' .$user->display_name .'</strong>
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
@@ -57,7 +54,7 @@ class Menu
                                 <div class="navbar-login">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <img src="' .Gravatar::getUrl($user->email) .'" class="img-circle img-responsive" style="height: 86px;" />
+                                            <img src="' .$user->avatar .'" class="img-circle img-responsive" style="height: 86px;" />
                                         </div>
                                         <div class="col-lg-8">
                                             <p class="text-left text-capitalize"><strong>' .$user->first_name . ' ' .$user->last_name .'</strong></p>
