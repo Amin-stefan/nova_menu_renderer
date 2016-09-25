@@ -12,6 +12,7 @@ use Auth;
 use Cache;
 use Config;
 use Request;
+use Language;
 
 
 class Menu
@@ -126,7 +127,7 @@ class Menu
 
     public static function render($name)
     {
-        $locale = Config::get('app.locale');
+        $locale = Language::getLocale();
 
         if (CONFIG_STORE == 'files') {
             $menu = Config::get("menu.$name.$locale");
