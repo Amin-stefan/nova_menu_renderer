@@ -29,9 +29,9 @@ class Menu
 
         foreach ($menu as $key => $item) {
             
-            if ($item['loggedin'] == true && ! Auth::check()) {
+            if ($item['loggedin'] === true && ! Auth::check()) {
                 continue;
-            } else if ($item['loggedin'] == false && ! Auth::guest()) {
+            } else if ($item['loggedin'] === false && ! Auth::guest()) {
                 continue;
             }
 
